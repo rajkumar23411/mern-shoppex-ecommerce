@@ -10,9 +10,9 @@ A full stack ecommerce project with Admin Dashboard & Stripe Payment Gateway.
 ![redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)&nbsp;
 ![mui](https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white)&nbsp;
 ![chart-js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)&nbsp;
-![react-slick]
-![axios]
-![slick-carousel]
+![react-slick](https://img.shields.io/badge/react-slick-f39c12?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![axios](https://img.shields.io/badge/Axios-8e44ad?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![slick-carousel](https://img.shields.io/badge/slick-carousel-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
 
 **Backend:**
 ![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)&nbsp;
@@ -28,8 +28,9 @@ A full stack ecommerce project with Admin Dashboard & Stripe Payment Gateway.
 
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
-**Image Management:** [Cloudinary]
-**Mail Service:** [Sendgrid]
+**Image Management:** [Cloudinary](https://cloudinary.com/)
+**Mail Service:** [Nodemailer](https://nodemailer.com/)
+
 ## 🚀 Features
 - Login/Signup User Account
 - Update Profile/Password User Account
