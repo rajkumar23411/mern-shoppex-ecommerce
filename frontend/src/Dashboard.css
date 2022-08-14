@@ -27,16 +27,9 @@
           left: 0;
           top: 0;
 }
-.dashboard .left .brandName{
-          font-size: 1.5rem;
-          font-weight: 600;
-          font-family: var(--font-2) !important;
-          color: #fff;
-          background: rgba(149, 165, 166,0.1);
-          margin: auto auto;
-          width: max-content;
-          padding: 10px 20px;
-          border-radius: 1rem;
+.dashboard .left .brandLogo{
+          text-align: center;
+          margin-left: 3rem;
 }
 .dashboard .left ul{
           display: flex;

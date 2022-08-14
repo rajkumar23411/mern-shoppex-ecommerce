@@ -114,11 +114,14 @@ const Payment = () => {
           onSubmit={(e) => submitHandler(e)}
           className="paymentForm"
         >
-          <div className="amount">₹{orderInfo && orderInfo.Total}</div>
+          <div className="amount">₹{orderInfo && orderInfo.Total.toLocaleString()}</div>
           <div className="header">
             <h4>Card Info</h4>
             <span>Enter your card details carefully</span>
           </div>
+          <div className="cardNum-info">
+          <b>**</b> Since this payment gateway for testing purpose,<br />use <b>4242 4242 4242 4242</b> as card number.
+        </div>
           <div className="input-div">
             <i className="fa-duotone fa-credit-card"></i>
             <CardNumberElement className="cardInput" />

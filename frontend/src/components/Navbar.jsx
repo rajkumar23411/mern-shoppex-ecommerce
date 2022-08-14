@@ -56,7 +56,15 @@ const Navbar = () => {
       <nav>
         <div className={stickyNavBar ? "bottom active" : "bottom"}>
           <div className="left">
-            <Link to="/"><h3>Shoppex</h3></Link>
+            <Link to="/">
+              <div className="brandLogo">
+                <img src="./shoppexlogo.png" alt="brand logo" />
+                <p>
+                  <span>Shoppex</span>
+                  <small>The Mans' Store</small>
+                </p>
+              </div>
+            </Link>
           </div>
           <div className="right">
             <ul className={toggleNavBar ? "navTags active" : "navTags"}>

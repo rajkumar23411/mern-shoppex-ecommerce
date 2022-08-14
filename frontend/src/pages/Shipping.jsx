@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingInfo } from "../redux/actions/cartAction";
-import { Country, State } from "country-state-city";
+import { State } from "country-state-city";
 import Navbar from "../components/Navbar.jsx";
 import "../App.css";
 import CartSummery from "../components/CartSummery";
@@ -16,7 +16,7 @@ const Shipping = () => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const [address, setAddress] = useState(shippingInfo.address);
   const [city, setCity] = useState(shippingInfo.city);
-  const [country, setCountry] = useState(shippingInfo.country);
+  const [country, setCountry] = useState('IN');
   const [state, setState] = useState(shippingInfo.state);
   const [pincode, setPincode] = useState(shippingInfo.pincode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
@@ -112,47 +112,24 @@ const Shipping = () => {
 
                 <div className="same-row">
                   <div className="input-select">
-                    <select
-                      value={country}
-                      onChange={(e) => setCountry(e.target.value)}
-                      required
-                      disabled
-                    >
-                      <option
-                        value={'IN'}
-                        defaultValue
-                        style={{ color: "rgba(0,0,0,0.5)" }}
-                        disabled
-                      >
-                        India
-                      </option>
-                      {Country &&
-                        Country.getAllCountries().map((item) => (
-                          <option value={'IN'} key={item.isoCode} disabled>
-                            {item.name}
-                          </option>
-                        ))}
+                    <label>Country*</label>
+                    <select name="country" defaultValue={country} disabled>
+                      <option value={'IN'}>India</option>
                     </select>
                   </div>
-                  {country && (
-                    <div className="input-select">
-                      <select
-                        value={state}
-                        onChange={(e) => setState(e.target.value)}
-                        required
-                      >
-                        <option defaultValue style={{ color: "rgba(0,0,0,0.5)" }}>
-                          Select State
-                        </option>
-                        {State &&
-                          State.getStatesOfCountry(country).map((item) => (
-                            <option value={item.isoCode} key={item.isoCode}>
-                              {item.name}
+                  <div className="input-select">
+                    <label>State*</label>
+                    <select name="state" value={state} onChange={e=> setState(e.target.value)} required>
+                        <option value="">select state</option>
+                        {
+                          State.getStatesOfCountry("IN").map((s)=>(
+                            <option value={s.isoCode} key={s.isoCode}>
+                              {s.name}
                             </option>
-                          ))}
-                      </select>
-                    </div>
-                  )}
+                          ))
+                        }
+                    </select>
+                  </div>
                 </div>
                 <button disabled={state ? false : true}>Continue</button>
               </div>

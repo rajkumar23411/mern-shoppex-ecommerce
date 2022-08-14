@@ -59,7 +59,7 @@ section {
 }
 /* =============forms form============== */
 .forms {
-  height: calc(100vh - 60px);
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -87,15 +87,42 @@ section {
 .forms .left img{
   height: 30rem;
 }
-.forms form {
-  text-align: center;
-  gap: 1.5rem;
+.forms .register-login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.register-login-form form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex: 1;
-  width: max-content !important;
+  gap: 2rem;
+  text-align: center;
 }
+.register-login-form form .input-field{
+  position: relative;
+}
+.register-login-form form label{
+  position: absolute;
+  left: 1rem;
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-6);
+  color: rgba(0, 0, 0, 0.5);
+}
+.register-login-form form .input-field input:focus ~ label,
+.register-login-form form .input-field input:valid ~ label,
+.register-login-form form .input-field input[type="email"]:valid ~ label{
+  top: 0;
+  font-size: 13px;
+  left: 0.5rem;
+  background: #fff;
+  color: #3498db;
+  padding: 0 2px;
+  font-weight: 400;
+}
+.register-login-form form,
 .updatePasswordPage form,
 .updateProfile form{
   flex: none;
@@ -110,8 +137,8 @@ section {
 .form-heading h3 {
   font-weight: 500;
   font-size: 1.3rem;
-  letter-spacing: 4px;
-  color: #19d16f;
+  font-family: var(--font-4);
+  color: #444;
 }
 .form-heading small {
   color: var(--small-text-col);
@@ -137,7 +164,7 @@ section {
 }
 .input-field input:focus{
   border:  1px solid rgba(52, 152, 219,0.8);
-  box-shadow: 0 0 4px rgba(52, 152, 219,0.8);
+  box-shadow: 0 0 2px rgba(52, 152, 219,0.8);
 }
 .input-field input::placeholder {
   color: var(--small-text-col);
@@ -180,23 +207,30 @@ section {
   cursor: pointer;
   font-weight: 500;
 }
+.registerForm form{
+  padding: 1rem 3rem !important;
+  gap: 1rem !important;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
 .profile-icon-div{
-  width: 100%;
-  text-align: center;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
 }
 .profile-icon-div .profileImage{
-  height: 11rem;
-  width: 11rem;
-  border-radius: 50%;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  border: 2px solid #7ed6df;
 }
 .forms .input-field input[type="file"]{
   width: 100%;
   height: 100%;
   padding: 0 0 !important;
   border: none;
-  background: #dff9fb;
+  background: #3498db;
 }
 .forms .input-field input[type="file"]::-webkit-file-upload-button{
   width: 100%;
@@ -216,6 +250,7 @@ section {
   font-family: sans-serif;
   font-weight: normal;
   color: #555;
+  color: #fff;
 }
 .updatePasswordForm .input-field input::placeholder{
   font-weight: 500;
@@ -386,10 +421,31 @@ nav .bottom {
   height: 60px;
   /* background: #7E33E0; */
 }
-nav .bottom .left h3{
+ .brandLogo{
+  display: flex;
+  align-items: center;
+}
+ .brandLogo img{
+  width: 2.5rem;
+  height: 100%;
+  object-fit: contain;
+}
+ .brandLogo p{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 13px;
+  height: 100%;
+  padding-top: 13px;
+}
+.brandLogo p span{
+  font-weight: bolder;
   font-family: var(--font-4);
+}
+.brandLogo p small{
+  text-transform: uppercase;
+  font-size: 8px;
   font-weight: 500;
-  color: #151875;
 }
 nav .bottom .right{
   display: flex;
@@ -1950,7 +2006,11 @@ line-height: 22px;
   padding: 2rem;
 }
 .cartPage .heading h2 {
-  font-weight: 300;
+  font-weight: 500;
+  font-family: var(--font-4);
+  color: #fff;
+  background: #3498db;
+  padding-left: 0.5rem;
 }
 .cartPage .some-options {
   display: flex;
@@ -1961,28 +2021,7 @@ line-height: 22px;
   display: flex;
   gap: 2rem;
 }
-.continueShoppingBtn,
-.checkoutBtn {
-  padding: 8px 16px;
-  cursor: pointer;
-}
-.continueShoppingBtn {
-  border: 2px solid rgba(0, 0, 0, 0.5);
-  background: transparent;
-  font-weight: 600;
-}
-.checkoutBtn {
-  background: #000;
-  color: #fff;
-}
-.shoppingBagOption,
-.wishlistOption {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
-  padding: 0px 0px;
-  cursor: pointer;
-}
+
 .cartPage .cart-main {
   display: flex;
   justify-content: space-between;
@@ -2152,6 +2191,20 @@ line-height: 22px;
 .cartPage .buyNow:hover {
   background: #14a751;
 }
+.continueShoppingBtn {
+  padding: 8px 16px;
+  cursor: pointer;
+  background: #FB2E86;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  width: 100%;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.continueShoppingBtn:hover{
+  background: #fb0079;
+}
 /* =================empty cart============= */
 .emptyCart {
   display: flex;
@@ -2187,9 +2240,10 @@ line-height: 22px;
 .shippingPage {
   padding: 1rem 4rem;
   display: flex;
-  background: #f1f3f6;
-  min-height: calc(100vh - 70px);
+  background: #f6f7f9;
+  height: calc(100vh - 70px);
   flex-direction: column;
+  overflow: hidden;
 }
 .shippingPage .MuiStepper-alternativeLabel {
   align-items: flex-start;
@@ -2202,23 +2256,25 @@ line-height: 22px;
   align-items: flex-start;
   margin-top: 2rem;
 }
-.shippingPage .main .heading{
+.shippingPage .main .shipping-form{
+  flex: 0.7;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.shippingPage .main .shipping-form .heading{
   background: #3498db;
-  padding: 1rem 1rem;
+  font-size: 1.3rem;
+  padding: 1rem 0.5rem;
+  font-weight: 600;
   color: #fff;
-  font-weight: 500;
-  font-size: 16px;
 }
-.shippingPage form {
-  background: #fff;
-}
-.shippingPage .main .form-options{
-  padding: 2rem 2rem;
+.shippingPage .main .shipping-form .form-options{
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
+  background: #fff;
 }
-.shippingPage form .input-div {
+ .shippingPage form .input-div {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -2244,6 +2300,7 @@ line-height: 22px;
   transform: translateY(-50%);
   font-family: var(--font-6);
   font-size: 15px;
+  pointer-events: none;
 }
 .shippingPage form .input-div input:valid ~ label,
 .shippingPage form .input-div input:focus ~ label{
@@ -2252,71 +2309,63 @@ line-height: 22px;
   background: #fff;
   padding: 0 4px;
   color: #3498db;
-}
-.shippingPage .same-row{
-  display: flex;
-  gap: 2rem;
-  width: 100%;
-}
-.same-row .input-select{
-  width: unset !important;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.same-row .input-select span{
-  font-size: 12px;
-  font-weight: 500;
-  color: #666;
-  font-family: var(--font-6);
-}
-.same-row .input-select select{
-  width: 100%;
-  height: 45px;
-  border: 1.5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-.shippingPage form .input-div input:focus {
-  box-shadow: 0 0 4px rgba(52, 152, 219, 0.6);
-  border-color: rgba(52, 152, 219, 0.6);
-}
-.shippingPage form button {
-  background: transparent;
+  pointer-events: none;
+} 
+.shippingPage .main .shipping-form .form-options button{
   background: #FB2E86;
-  color: #fff;
-  font-weight: 500;
-  font-size: 16px;
+  height: 40px;
   border: none;
-  padding: 0.8rem 3rem;
+  color: #fff;
+  font-size: 15px;
   border-radius: 2px;
-  width: 100%;
   cursor: pointer;
 }
-.shippingPage form button:hover{
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+.shippingPage .main .shipping-form .form-options button:hover{
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
 .shippingPage .orderSummery {
-  border: 1px solid rgba(0, 0, 0, 0.2);
   height: min-content;
   border-radius: 4px;
   width: 350px;
   background: #fff;
-  padding-top: 1rem;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 .shippingPage .orderSummery .heading-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 1rem 0.5rem;
+  background: #2ecc71;
 }
 .shippingPage .orderSummery .heading-section h4 {
   font-weight: 500;
+  text-transform: uppercase;
 }
 .shippingPage .orderSummery .heading-section small {
-  color: rgba(52, 152, 219, 1);
+  color: #fff;
   font-weight: 500;
   cursor: pointer;
+}
+.shippingPage .same-row{
+  display: flex;
+  gap: 2rem;
+}
+.shippingPage .same-row .input-select{
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+  width: 100% !important;
+}
+.shippingPage .same-row .input-select label{
+  font-size: 12px;
+  font-weight: 450;
+  font-family: var(--font-6);
+}
+.shippingPage .same-row .input-select select{
+  height: 45px !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .cartItems {
   padding: 1rem;
@@ -2357,7 +2406,10 @@ line-height: 22px;
   justify-content: space-between;
 }
 .shippingPage .priceInfo p span {
-  font-size: 13px;
+  font-size: 14px;
+}
+.shippingPage .priceInfo p span:last-child{
+  font-family: var(--font-6);
 }
 .shippingPage .totalPrice {
   display: flex;
@@ -2365,13 +2417,16 @@ line-height: 22px;
   justify-content: space-between;
   padding: 1rem;
 }
+.shippingPage .totalPrice span:first-child{
+  font-weight: 550;
+}
 .shippingPage .totalPrice span:last-child {
   display: flex;
   gap: 4px;
   font-size: 1.4rem;
   font-weight: 500;
   align-items: center;
-  font-family: var(--font-6);
+  font-family: var(--font-6) !important;
 }
 .shippingPage .totalPrice span p {
   font-family: var(--font-2);
@@ -2592,7 +2647,13 @@ line-height: 22px;
   position: relative;
   border-radius: 4px;
 }
-/* bipashamazumdar9@gmail.com */
+.cardNum-info{
+  font-size: 11px;
+  color: tomato;
+  background: rgba(231, 76, 60,0.1);
+  border: 1px solid rgba(231, 76, 60,0.2);
+  padding: 10px 6px;
+}
 .paymentForm .amount{
   position: absolute;
   top: 1rem;
@@ -2612,7 +2673,7 @@ line-height: 22px;
 }
 .paymentForm .header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .paymentForm .header h4 {
   font-size: 1.3rem;

@@ -43,6 +43,7 @@ const Login = () => {
           <img src="/login-bro.svg" alt="login" />
           <h3>Part of us? Worry not, Login now</h3>
         </div>
+        <div className="register-login-form">
         <form onSubmit={loginSubmit}>
           <div className="form-heading">
             <h3>LOGIN</h3>
@@ -51,7 +52,6 @@ const Login = () => {
           <div className="input-field">
             <input
               type="email"
-              placeholder="Email"
               autoComplete="false"
               required
               value={loginEmail}
@@ -59,15 +59,16 @@ const Login = () => {
                 setLoginEmail(e.target.value);
               }}
             />
+            <label>Email*</label>
           </div>
           <div className="input-field forgotPassowrdOption">
             <input
               type="password"
-              placeholder="Password"
               required
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
             />
+            <label>Password*</label>
             <Link to="/forgot_password">
               <div className="forgotPassword">Forgot Password?</div>
             </Link>
@@ -83,6 +84,7 @@ const Login = () => {
             </Link>
           </div>
         </form>
+        </div>
       </div>
       <Footer />
     </>

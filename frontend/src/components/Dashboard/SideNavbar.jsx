@@ -19,7 +19,15 @@ const SideNavbar = () => {
           }
   return (
     <>
-      <div className="brandName"><Link to="/" style={{color: "unset"}}>Shoppex</Link></div>
+    <Link to="/" style={{color: "unset"}}>
+      <div className="brandLogo">
+          <img src="/shoppexlogo.png" alt="brand logo" />
+          <p>
+            <span>Shoppex</span>
+            <small style={{color:"#fff"}}>The Mans' store</small>
+          </p>
+      </div>
+        </Link>
       <ul>
         <Link to="/admin/dashboard" style={{color: "unset"}}>
           <li>

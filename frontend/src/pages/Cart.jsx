@@ -10,6 +10,7 @@ import EmptyCart from "../components/EmptyCart";
 const Cart = () => {
   const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
+  const { wishlistItems } = useSelector(state => state.wishlist);
   const { isAuthenticated } = useSelector((state) => state.user);
 
   const subTotal = cartItems.reduce((acc, curr) => {
@@ -40,9 +41,9 @@ const Cart = () => {
           <Navbar />
           <div className="cartPage">
             <div className="heading">
-              <h2>YOUR CART</h2>
+              <h2>Your Cart</h2>
             </div>
-            <div className="some-options">
+            {/* <div className="some-options">
               <Link to="/products">
                 <button className="continueShoppingBtn">
                   CONTINUE SHOPPING
@@ -52,10 +53,10 @@ const Cart = () => {
                 <button className="shoppingBagOption">
                   Shopping Bag ({cartItems.length})
                 </button>
-                <button className="wishlistOption">Your Wishlist (0)</button>
+                <button className="wishlistOption">Your Wishlist {`(${wishlistItems.length})`}</button>
               </span>
               <button className="checkoutBtn">CHECKOUT NOW</button>
-            </div>
+            </div> */}
             <div className="cart-main">
               <div className="left">
                 <div className="cartHeader">
@@ -91,7 +92,7 @@ const Cart = () => {
                     <span>{tax.toFixed(2)}</span>
                   </div>
                   <div className="Total">
-                    <span style={{ fontWeight: "bold"}}>Total</span>
+                    <span style={{ fontWeight: "bold" }}>Total</span>
                     <span>₹{Total.toFixed(2)}</span>
                   </div>
                   <button
@@ -101,6 +102,7 @@ const Cart = () => {
                   >
                     BUY NOW
                   </button>
+                  <Link to="/products"><button className="continueShoppingBtn">Continue Shopping</button></Link>
                 </span>
               </div>
             </div>

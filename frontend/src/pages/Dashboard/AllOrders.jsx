@@ -52,7 +52,7 @@ const AllOrders = () => {
       ) : (
         <>
           <div className="right">
-            <div className="header" style={{ "fontWeight": "600", "padding": "1rem 0 2rem 1rem", "textTransform": "uppercase" }}>ALL ORDERS</div>
+            <div className="header" style={{ "fontWeight": "600", "padding": "1rem 0 2rem 1rem", "textTransform": "uppercase" }}>ALL ORDERS {orders.length}</div>
             <TableContainer component={Paper}>
             <Table sx={{minWidth: 650}} aria-label="simple table">
               <TableHead>
