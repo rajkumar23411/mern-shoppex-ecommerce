@@ -110,6 +110,7 @@ section {
   transform: translateY(-50%);
   font-family: var(--font-6);
   color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 .register-login-form form .input-field input:focus ~ label,
 .register-login-form form .input-field input:valid ~ label,
