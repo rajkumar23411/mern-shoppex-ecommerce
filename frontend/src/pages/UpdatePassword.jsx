@@ -21,6 +21,9 @@ const UpdatePassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const updatePasswordSubmit = (e) => {
     e.preventDefault();
+    if(newPassword.length < 6){
+     return enqueueSnackbar("New Password should be 6 or more than 6 characters", {variant:"info"});
+    }
 
     const myForm = new FormData();
 
@@ -62,6 +65,7 @@ const UpdatePassword = () => {
                 value={oldPassword}
                 onChange={(e) => setOldPassword(e.target.value)}
                 autocomplete="false"
+                required
               />
               <label>Old Password*</label>
             </div>
@@ -71,6 +75,7 @@ const UpdatePassword = () => {
                 name="newPassword"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
+                required
               />
               <label>New Password*</label>
             </div>
@@ -80,6 +85,7 @@ const UpdatePassword = () => {
                 name="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                required
               />
               <label>Confirm New Password*</label>
             </div>
