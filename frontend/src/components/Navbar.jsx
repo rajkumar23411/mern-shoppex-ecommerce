@@ -61,7 +61,7 @@ const Navbar = () => {
                 <img src="/shoppexlogo.png" alt="brand logo" />
                 <p>
                   <span>Shoppex</span>
-                  <small>The Mans' Store</small>
+                  <small>The Mens' Store</small>
                 </p>
               </div>
             </Link>
