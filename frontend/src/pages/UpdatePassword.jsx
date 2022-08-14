@@ -49,6 +49,7 @@ const UpdatePassword = () => {
         <Loader />
       ) : (
         <div className="forms updatePasswordPage">
+          <div className="register-login-form">
           <form action="#" onSubmit={updatePasswordSubmit} className="updatePasswordForm">
             <div className="form-heading">
               <h3>CHANGE PASSWORD</h3>
@@ -61,8 +62,8 @@ const UpdatePassword = () => {
                 value={oldPassword}
                 onChange={(e) => setOldPassword(e.target.value)}
                 autocomplete="false"
-                placeholder="Old Password*"
               />
+              <label>Old Password*</label>
             </div>
             <div className="input-field">
               <input
@@ -70,8 +71,8 @@ const UpdatePassword = () => {
                 name="newPassword"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                placeholder="New Password*"
               />
+              <label>New Password*</label>
             </div>
             <div className="input-field">
               <input
@@ -79,13 +80,14 @@ const UpdatePassword = () => {
                 name="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm New Password*"
               />
+              <label>Confirm New Password*</label>
             </div>
             <div className="input-field">
               <button>UPDATE PASSWORD</button>
             </div>
           </form>
+          </div>
         </div>
       )}
     </>

@@ -113,7 +113,7 @@ section {
 }
 .register-login-form form .input-field input:focus ~ label,
 .register-login-form form .input-field input:valid ~ label,
-.register-login-form form .input-field input[type="email"]:valid ~ label{
+.register-login-form form .input-field input[type="email"]:focus ~ label{
   top: 0;
   font-size: 13px;
   left: 0.5rem;
@@ -127,7 +127,7 @@ section {
 .updateProfile form{
   flex: none;
   background: #fff;
-  padding: 3rem 2rem;
+  padding: 2rem;
   border-radius: 4px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }

@@ -63,7 +63,8 @@ const UpdateProfile = () => {
         <>
         <Navbar />
           <div className="forms">
-            <form encType="multipart/form-data" onSubmit={updateProfileSubmit}>
+           <div className="register-login-form">
+           <form encType="multipart/form-data" onSubmit={updateProfileSubmit}>
               <div className="form-heading">
                 <h3>UPDATE YOUR PROFILE</h3>
                 <small>Please fill in the information below:</small>
@@ -78,26 +79,24 @@ const UpdateProfile = () => {
               }
               </div>
               <div className="input-field">
-                    <label htmlFor="name">Full Name</label>
                 <input
                   type="text"
-                  placeholder="Name"
                   name="name"
                   value={name}
                   onChange={(e)=>setName(e.target.value)}
                   required
                 />
+                <label htmlFor="name">Full Name*</label>
               </div>
               <div className="input-field">
-              <label htmlFor="email">Email</label>
                 <input
                   type="email"
-                  placeholder="Email"
                   name="email"
                   value={email}
                   onChange={(e)=>setEmail(e.target.value)}
                   required
                 />
+                <label htmlFor="email">Email*</label>
               </div>
               <div className="input-field">
                 <input
@@ -111,6 +110,7 @@ const UpdateProfile = () => {
                 <button>UPDATE PROFILE</button>
               </div>
             </form>
+           </div>
           </div>
         </>
       }

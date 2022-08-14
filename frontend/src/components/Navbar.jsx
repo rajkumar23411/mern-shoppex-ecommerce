@@ -58,7 +58,7 @@ const Navbar = () => {
           <div className="left">
             <Link to="/">
               <div className="brandLogo">
-                <img src="./shoppexlogo.png" alt="brand logo" />
+                <img src="/shoppexlogo.png" alt="brand logo" />
                 <p>
                   <span>Shoppex</span>
                   <small>The Mans' Store</small>
