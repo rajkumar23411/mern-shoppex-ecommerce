@@ -16,6 +16,7 @@ const Shipping = () => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const [address, setAddress] = useState(shippingInfo.address);
   const [city, setCity] = useState(shippingInfo.city);
+  // eslint-disable-next-line
   const [country, setCountry] = useState('IN');
   const [state, setState] = useState(shippingInfo.state);
   const [pincode, setPincode] = useState(shippingInfo.pincode);

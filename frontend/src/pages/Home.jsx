@@ -11,7 +11,7 @@ import Offer from "../components/Offer";
 import RecentOrder from "../components/recentOrder";
 const Home = () => {
    return (
-      <>
+      <div>
          <Navbar />
          <Banner />
          <Category />
@@ -21,7 +21,7 @@ const Home = () => {
          <Offer />
          <NewArrivals />
          <Footer />
-      </>
+      </div>
    );
 };
 

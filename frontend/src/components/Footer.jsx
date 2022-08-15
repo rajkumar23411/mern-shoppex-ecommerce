@@ -6,14 +6,19 @@ const Footer = () => {
       <div className="footer">
          <div className="div-1">
             <div className="logo">
-               <div className="logo-name">
-                  <h3>Shoppex</h3>
+               <div className="brandLogo">
+                  <img src="/shoppexlogo.png" alt="shoppex logo" />
+                  <p>
+                     <span>Shoppex</span>
+                     <small>The Mens' Store</small>
+                  </p>
                </div>
                <div className="social-icons">
-                  <i className="fa-brands fa-whatsapp"></i>
-                  <i className="fa-brands fa-instagram"></i>
-                  <i className="fa-brands fa-facebook-f"></i>
-                  <i className="fa-brands fa-twitter"></i>
+                  <i className="fa-brands fa-whatsapp" style={{ color: "#25D366" }}></i>
+                  <i className="fa-brands fa-instagram" style={{ color: "#833AB4" }}></i>
+                  <i className="fa-brands fa-facebook-f" style={{ color: "#4267B2" }}></i>
+                  <i className="fa-brands fa-twitter" style={{ color: "	#1DA1F2" }}></i>
+                  <i className="fa-regular fa-envelope" style={{"color":"#4A00A0"}}></i>
                </div>
             </div>
             <div className="quickLinks">
@@ -33,7 +38,7 @@ const Footer = () => {
                   <Link to="/cart" style={{"color":"unset"}}>Cart</Link>
                   <Link to="/orders" style={{"color":"unset"}}>Orders</Link>
                   <Link to="/payment" style={{"color":"unset"}}><li>Payments</li></Link>
-                  <Link to="/sizing"><li>Inclusive Sizing</li></Link>
+                  <Link to="/sizing" style={{"color":"unset"}}><li>Inclusive Sizing</li></Link>
                </ul>
             </div>
             <div className="newsLetter">

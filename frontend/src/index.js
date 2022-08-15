@@ -5,20 +5,24 @@ import App from "./App";
 import { Provider } from "react-redux";
 import store from './redux/store';
 import { SnackbarProvider } from 'notistack';
-
+import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-   <Provider store={store}>
-     <SnackbarProvider
-         dense  
-         autoHideDuration={2000}
-         maxSnack={2}
-         anchorOrigin={{
+  <React.StrictMode>
+    <Provider store={store}>
+      <SnackbarProvider
+        dense
+        autoHideDuration={2500}
+        maxSnack={2}
+        anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'center',
         }}>
-      <App />
-     </SnackbarProvider>
-   </Provider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </SnackbarProvider>
+    </Provider>
+  </React.StrictMode>
 );

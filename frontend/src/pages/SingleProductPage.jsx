@@ -139,12 +139,18 @@ const SingleProductPage = () => {
                       src={item.url}
                       alt={`${i} slide`}
                       key={item.url}
-                      className="carouselImage" />
-                  ))}
+                      className="carouselImage" />))}
               </Carousel>
               <div className="wishlistIcon" onClick={addToWishListHandler}>
                 <i className='fa-solid fa-heart' style={itemInWishList ? { "color": "red" } : { "color": "rgba(0,0,0,0.2)" }}></i>
               </div>
+              {
+                product.stock === 0 && (
+                  <div className="soldOut-block">
+                    <p>Sold Out</p>
+                  </div>
+                )
+              }
             </div>
             <div>
               <div className="productDetails">

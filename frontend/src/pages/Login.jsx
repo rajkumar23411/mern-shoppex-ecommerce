@@ -51,7 +51,7 @@ const Login = () => {
           </div>
           <div className="input-field">
             <input
-              type="email"
+              type="text"
               autoComplete="new-password"
               required
               value={loginEmail}

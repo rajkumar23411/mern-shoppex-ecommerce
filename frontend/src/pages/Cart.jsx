@@ -41,27 +41,13 @@ const Cart = () => {
           <Navbar />
           <div className="cartPage">
             <div className="heading">
-              <h2>Your Cart</h2>
+              <h2>Your Cart {`(${cartItems.length})`}</h2>
             </div>
-            {/* <div className="some-options">
-              <Link to="/products">
-                <button className="continueShoppingBtn">
-                  CONTINUE SHOPPING
-                </button>
-              </Link>
-              <span>
-                <button className="shoppingBagOption">
-                  Shopping Bag ({cartItems.length})
-                </button>
-                <button className="wishlistOption">Your Wishlist {`(${wishlistItems.length})`}</button>
-              </span>
-              <button className="checkoutBtn">CHECKOUT NOW</button>
-            </div> */}
             <div className="cart-main">
               <div className="left">
                 <div className="cartHeader">
                   <span>Product</span>
-                  <span>Price</span>
+                  <span>Unit Price</span>
                   <span>Quantity</span>
                   <span>Total</span>
                 </div>
@@ -71,29 +57,29 @@ const Cart = () => {
                   ))}
               </div>
               <div className="right">
-                <div className="heading">
+                <div className="heading" style={{"textAlign":"center"}}>
                   <h3>CART SUMMERY</h3>
                 </div>
                 <span className="priceBox">
                   <div className="subtotal">
                     <span>Subtotal</span>
-                    <span>{subTotal.toFixed(2)}</span>
+                    <span>₹{subTotal.toLocaleString()}</span>
                   </div>
                   <div className="shipping">
                     <span>Estimate Shipping</span>
-                    <span>{shippingPrice.toFixed(2)}</span>
+                    <span>₹{shippingPrice.toFixed(2)}</span>
                   </div>
                   <div className="discount">
                     <span>Shipping Disocunt</span>
-                    <span>{shippingDiscount.toFixed(2)}</span>
+                    <span>₹{shippingDiscount.toFixed(2)}</span>
                   </div>
                   <div className="tax">
                     <span>Tax</span>
-                    <span>{tax.toFixed(2)}</span>
+                    <span>₹{tax.toFixed(2)}</span>
                   </div>
                   <div className="Total">
                     <span style={{ fontWeight: "bold" }}>Total</span>
-                    <span>₹{Total.toFixed(2)}</span>
+                    <span>₹{Total.toLocaleString()}</span>
                   </div>
                   <button
                     className="buyNow"

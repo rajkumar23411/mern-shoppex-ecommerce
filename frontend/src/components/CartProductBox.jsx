@@ -40,13 +40,13 @@ const CartProductBox = ({ item }) => {
             <span className="productSize">size</span>
           </div>
         </div>
-        <div className="product-price">₹{item.price}</div>
+        <div className="product-price">₹{item.price.toLocaleString()}</div>
         <div className="add-remove-qty">
           <span onClick={() => decreaseQty(item.product, item.quantity, item.stock)} className="qtyBtn"> <img src="/arrow-down.svg" alt="arrow down" className="arrows"/> </span>
           <span className="totalQty">{item.quantity}</span>
           <span onClick={() => increaseQty(item.product, item.quantity, item.stock)} className="qtyBtn"> <img src="/arrow-up.svg" alt="arrow up" className="arrows"/> </span>
         </div>
-        <div className="total-price">₹{item.quantity * item.price}</div>
+        <div className="total-price">₹{(item.quantity * item.price).toLocaleString()}</div>
       </div>
     </div>
   );

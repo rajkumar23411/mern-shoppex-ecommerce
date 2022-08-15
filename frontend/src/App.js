@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -38,9 +38,10 @@ import ProductReviews from "./pages/Dashboard/ProductReviews";
 import LostPage from "./pages/404";
 import WishList from "./pages/WishList";
 import AllProductsList from "./pages/Dashboard/AllProductsList";
+
 const App = () => {
   const [stripeApiKey, setStripeApiKey] = useState(null);
-  
+  const {pathname} = useLocation();
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/sendApiKey");
     setStripeApiKey(data.stripeApiKey);
@@ -56,8 +57,17 @@ const App = () => {
     if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
     if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }, [pathname])
+  
   return (
-    <BrowserRouter>
+    <>
       <Routes>
       <Route path="/" element={<Home />} exact />
       <Route path="/login" element={<Login />} />
@@ -92,7 +102,7 @@ const App = () => {
       <Route path="/admin/reviews" element={<ProtectedRoutes isAdmin={true}><ProductReviews /></ProtectedRoutes>} />
       <Route path="*" element={<LostPage />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 

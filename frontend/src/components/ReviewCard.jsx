@@ -11,7 +11,7 @@ const ReviewCard = ({review}) => {
       
     <div className='reviewCard'>
       <div>
-            <img src="/blank-user.png" alt="profile" className='profileIcon'/>
+            <img src="https://i0.wp.com/artvoice.com/wp-content/uploads/2018/03/blank-profile-picture-973460_960_720.png?ssl=1" alt="profile" className='profileIcon'/>
       </div>
       <div>
             <div className="nameReview">

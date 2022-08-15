@@ -83,17 +83,6 @@ const Navbar = () => {
               <NavLink to="/contact">
                 <li>Contact Us</li>
               </NavLink>
-              {
-                !isAuthenticated && 
-                  <>
-                    <NavLink to="/register">
-                      <li>Register</li>
-                    </NavLink>
-                    <NavLink to="/login">
-                      <li>Login</li>
-                    </NavLink>
-                  </>
-              }
             </ul>
           </div>
           <div className="right">
@@ -101,7 +90,11 @@ const Navbar = () => {
               <div className="searcIcon" onClick={showSearchPage}>
                 <img src="/search-normal.svg" alt="Icon" className="Icon" />
               </div>
-              <div className="accountIcon">
+             {
+              !isAuthenticated ? (
+                <Link to="/login"><div className="LoginOption">Login</div></Link>
+              ):(
+                <div className="accountIcon">
                 <i class="fa-duotone fa-circle-user"></i>
                 <p>Profile</p>
                 <div className="account-menu">
@@ -172,6 +165,8 @@ const Navbar = () => {
                   )}
                 </div>
               </div>
+              )
+             }
               <Link to="/wishlist">
                 <div className="wishlistIcon">
                   <i className="fa-duotone fa-heart-circle-check"></i>
@@ -212,7 +207,7 @@ const Navbar = () => {
                 placeholder="search here products, brands and more.."
                 onChange={(e) => setKeyword(e.target.value)}
               />
-              <i className="fa-solid fa-magnifying-glass"></i>
+              <i className="fa-light fa-magnifying-glass"></i>
               <div className="cross" onClick={removeSearchPage}>
                 &times;
               </div>
