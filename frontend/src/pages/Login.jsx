@@ -52,7 +52,7 @@ const Login = () => {
           <div className="input-field">
             <input
               type="email"
-              autoComplete="false"
+              autoComplete="new-password"
               required
               value={loginEmail}
               onChange={(e) => {

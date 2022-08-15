@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../App.css";
 import React from "react";
 import { logOut } from "../redux/actions/userAction";
@@ -22,8 +22,13 @@ const Navbar = () => {
     } else {
       setStickyNavBar(false);
     }
+
+    if(window.scrollY > 500){
+      setSearchPage(false)
+    }
   };
   window.addEventListener("scroll", StickyNavBar);
+
   const showSearchPage = () => {
     setSearchPage(true);
   };
@@ -65,36 +70,33 @@ const Navbar = () => {
                 </p>
               </div>
             </Link>
-          </div>
-          <div className="right">
             <ul className={toggleNavBar ? "navTags active" : "navTags"}>
-              <Link to="/">
+              <NavLink to="/">
                 <li>Home</li>
-              </Link>
-              <Link to="/products">
+              </NavLink>
+              <NavLink to="/products">
                 <li>Products</li>
-              </Link>
-              <Link to="/about">
+              </NavLink>
+              <NavLink to="/about">
                 <li>About Us</li>
-              </Link>
-              <Link to="/contact">
+              </NavLink>
+              <NavLink to="/contact">
                 <li>Contact Us</li>
-              </Link>
+              </NavLink>
               {
-                !isAuthenticated ? (
+                !isAuthenticated && 
                   <>
-                    <Link to="/register">
+                    <NavLink to="/register">
                       <li>Register</li>
-                    </Link>
-                    <Link to="/login">
+                    </NavLink>
+                    <NavLink to="/login">
                       <li>Login</li>
-                    </Link>
+                    </NavLink>
                   </>
-                ) : (
-                  <li onClick={logoutUser} className="logoutOption">Logout</li>
-                )
               }
             </ul>
+          </div>
+          <div className="right">
             <div className="navIcons">
               <div className="searcIcon" onClick={showSearchPage}>
                 <img src="/search-normal.svg" alt="Icon" className="Icon" />

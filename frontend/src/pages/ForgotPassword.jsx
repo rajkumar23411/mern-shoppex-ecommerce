@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../components/loader";
 import { clearErrors, forgotPassword } from "../redux/actions/userAction";
 import { useSnackbar } from "notistack";
+import Navbar from "../components/Navbar";
 const ForgotPassword = () => {
   const dispatch = useDispatch();
   const {enqueueSnackbar} = useSnackbar();
@@ -23,13 +24,14 @@ const ForgotPassword = () => {
       enqueueSnackbar(error, {variant:"error"});
       dispatch(clearErrors());
     }
-
     if (message) {
       enqueueSnackbar(message, {variant:"success"});
     }
+
   }, [dispatch, enqueueSnackbar, error, message]);
   return (
     <>
+    <Navbar />
       {loading ? (
         <Loader />
       ) : (
@@ -37,8 +39,9 @@ const ForgotPassword = () => {
           <div className="left">
             <img src="Forgot-password.svg" alt="forgot password" />
             <h3>Forgot Your Password ?</h3>
-            <span>No worries! Your can reset it now</span>
+            <span>No worries! You can reset your password easily.</span>
           </div>
+          <div className="register-login-form forgotPasswordForm">
           <form action="#" onSubmit={forgotPasswordSubmit}>
             <div className="form-heading">
               <h3>RECOVER PASSWORD</h3>
@@ -47,7 +50,7 @@ const ForgotPassword = () => {
             <div className="input-field">
               <input
                 type="email"
-                placeholder="Email"
+                placeholder="Enter Your Registered Email*"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -65,6 +68,7 @@ const ForgotPassword = () => {
               </small>
             </div>
           </form>
+          </div>
         </div>
       )}
     </>

@@ -12,11 +12,11 @@ root.render(
    <Provider store={store}>
      <SnackbarProvider
          dense  
-         autoHideDuration={1000}
+         autoHideDuration={2000}
          maxSnack={2}
          anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: 'bottom',
+          horizontal: 'center',
         }}>
       <App />
      </SnackbarProvider>

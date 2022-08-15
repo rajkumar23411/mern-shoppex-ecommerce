@@ -8,6 +8,7 @@ import { register, clearErrors } from "../redux/actions/userAction";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from "notistack";
+import Navbar from "../components/Navbar";
 const Register = () => {
   const dispatch = useDispatch();
   const {enqueueSnackbar} = useSnackbar();
@@ -22,6 +23,13 @@ const Register = () => {
   const registerSubmit = (e) => {
     e.preventDefault();
 
+    if(name.length <= 3){
+      return enqueueSnackbar("Name should be greater than 4 characters", {variant:"info"});
+    }    
+    if(password.length < 6 ){
+      return enqueueSnackbar("Password must be of 6 or more than 6 characters", {variant:"warning"});
+    }
+
     const myForm = new FormData();
 
     myForm.set("name", name);
@@ -34,12 +42,6 @@ const Register = () => {
   const registerDataChange = (e) => {
     if (e.target.name === "avatar") {
       const reader = new FileReader();
-
-    if(name.length <= 3){
-      return enqueueSnackbar("Name should be greater than 4 characters");
-    }    if(password.length < 6 ){
-      return enqueueSnackbar("Password must be of 6 or more than 6 characters", {variant:"warning"});
-    }
       reader.onload = () => {
         if (reader.readyState === 2) {
           setAvatarPreview(reader.result);
@@ -67,6 +69,7 @@ const Register = () => {
         <Loader />
       ) : (
         <>
+        <Navbar />
           <div className="forms">
            <div className="register-login-form registerForm">
            <form encType="multipart/form-data" onSubmit={registerSubmit}>
@@ -87,7 +90,7 @@ const Register = () => {
                   name="name"
                   value={name}
                   onChange={registerDataChange}
-                  autoComplete="false"
+                  autoComplete="new-password"
                   required
                 />
                 <label>Name*</label>
@@ -98,6 +101,7 @@ const Register = () => {
                   name="email"
                   value={email}
                   onChange={registerDataChange}
+                  autoComplete="new-password"
                   required
                 />
                 <label>Email*</label>
@@ -108,6 +112,7 @@ const Register = () => {
                   name="password"
                   value={password}
                   onChange={registerDataChange}
+                  autoComplete="new-password"
                   required
                 />
                 <label>Password*</label>
