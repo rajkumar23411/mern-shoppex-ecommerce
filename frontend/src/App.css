@@ -518,7 +518,7 @@ nav .bottom .left ul li{
   right: 0;
   backdrop-filter: blur(15px);
   transition: top 0.3s;
-  z-index: 2;
+  z-index: 20000;
 }
 .searchPage.active {
   top: 0;
