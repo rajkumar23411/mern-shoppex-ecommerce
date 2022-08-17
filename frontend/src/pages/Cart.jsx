@@ -10,7 +10,7 @@ import EmptyCart from "../components/EmptyCart";
 const Cart = () => {
   const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
-  const { wishlistItems } = useSelector(state => state.wishlist);
+  // const { wishlistItems } = useSelector(state => state.wishlist);
   const { isAuthenticated } = useSelector((state) => state.user);
 
   const subTotal = cartItems.reduce((acc, curr) => {

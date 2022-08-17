@@ -7,7 +7,7 @@ import { formatDate } from '../functions';
 import { myOrders } from '../redux/actions/orderAction';
 
 const RecentOrder = () => {
-    const { orders, loading } = useSelector(state => state.myOrder);
+    const { orders } = useSelector(state => state.myOrder);
     const { isAuthenticated } = useSelector(state => state.user);
     const dispatch = useDispatch();
     useEffect(() => {

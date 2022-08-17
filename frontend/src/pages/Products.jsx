@@ -84,6 +84,7 @@ const Products = () => {
           <Navbar />
           <div className="allProducts">
             <div className="page-heading">
+            {/* eslint-disable-next-line */}
               <h3></h3>
             </div>
             <div className="main">

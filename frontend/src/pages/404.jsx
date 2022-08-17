@@ -9,7 +9,7 @@ const LostPage = () => {
         <Navbar />
         <div className='lost-page'>
             <img src="/lost404.gif" alt="404" />
-            <h3>oops! The page you requested was not found! <span role="img">😥</span></h3>
+            <h3>oops! The page you requested is not found!</h3>
             <Link to="/"><span>Back To Home</span></Link>
         </div>
         <Footer />
