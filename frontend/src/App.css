@@ -500,11 +500,12 @@ nav .bottom .left ul{
 nav .bottom .left ul{
   margin-left: 4rem;
   display: flex;
-  gap: 1.6rem;
+  gap: 2rem;
 }
 nav .bottom .left ul li{
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
+  color: #1d3178;
   /* text-transform: uppercase; */
 }
 /* ==================show search bar================== */
