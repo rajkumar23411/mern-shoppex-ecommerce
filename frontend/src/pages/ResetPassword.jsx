@@ -22,6 +22,9 @@ const ResetPassword = () => {
   const resetPasswordSubmit = (e) => {
     e.preventDefault();
 
+    if(password.length < 6){
+      return enqueueSnackbar("Password must be of minimum 6 characters", {variant:"error"})
+    }
     const myForm = new FormData();
     myForm.set("password", password);
     myForm.set("confirmPassword", confirmPassword);
@@ -46,6 +49,7 @@ const ResetPassword = () => {
         <Loader />
       ) : (
         <div className="forms">
+          <div className="register-login-form">
           <form action="#" onSubmit={resetPasswordSubmit}>
             <div className="form-heading">
               <h3>RESET PASSWORD</h3>
@@ -54,20 +58,22 @@ const ResetPassword = () => {
             <div className="input-field">
               <input
                 type="password"
-                placeholder="Password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
+              <label>Enter New Password*</label>
             </div>
             <div className="input-field">
               <input
                 type="password"
-                placeholder="Confirm Password"
                 name="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                required
               />
+              <label>Confirm New Password*</label>
             </div>
             <div className="input-field">
               <button>RESET PASSWORD</button>
@@ -81,6 +87,7 @@ const ResetPassword = () => {
               </small>
             </div>
           </form>
+          </div>
         </div>
       )}
     </>

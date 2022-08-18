@@ -34,19 +34,19 @@ const Banner = () => {
    };
    const banner = [
       {
-         img: "./banner-2.jpg",
+         img: "/banner-1.jpg",
          i: "The lastest gear from",
          h3: "The mens' store",
          span: "Browse collection"
       },
       {
-         img: "./banner-1.jpg",
+         img: "/banner-2.jpg",
          i: "Buy 4, Get 2 Free",
          h3: "Grab Your favourite product now..",
          span: "Grab Now"
       },
       {
-         img: "./banner-3.jpg",
+         img: "/banner-3.jpg",
          i: "The lastest gear from",
          h3: "The mens' store",
          span: "Browse collection"

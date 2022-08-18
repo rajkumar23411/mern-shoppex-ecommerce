@@ -81,8 +81,8 @@ exports.forgotPassword = catchAsycErrors(async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`;
-  // const resetPasswordUrl = `http://localhost:3000/password/reset/${resetToken}`;
+  // const resetPasswordUrl = `${req.protocol}://${req.get("host")}/password/reset/${resetToken}`;
+  const resetPasswordUrl = `http://localhost:3000/password/reset/${resetToken}`;
 
   const message = `Click the link below to reset your password - \n\n ${resetPasswordUrl}  \n\n If you have not request this then please ignore it.`;
 
@@ -127,7 +127,6 @@ exports.resetPassword = catchAsycErrors(async (req, res, next) => {
       )
     );
   }
-rder
   if (req.body.password !== req.body.confirmPassword) {
     return next(new ErrorHandler("Password does not match", 400));
   }
